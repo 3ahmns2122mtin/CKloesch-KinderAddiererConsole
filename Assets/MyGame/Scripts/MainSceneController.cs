@@ -20,45 +20,61 @@ public class MainSceneController : MonoBehaviour
 
         result = summandA + summandB;
 
-        Debug.Log(result);
+        
         txtResult.text = string.Format("{0}", result);
+        
         return result;
     }
 
 
-    void Start()
-    {
-        Debug.Log("Frohe Weihnachten");
-
-    }
 
     public void GetValues()
     {
-        string termA, termB;
-        termA = inputFieldTermA.text;
-        termB = inputFieldTermB.text;
+        try
+        { 
+        termA = int.Parse(inputFieldTermA.text);
+        }
+        catch(System.Exception)
+        {
+            inputFieldTermA.GetComponent<InputField>().image.color = Color.red;
+            inputFieldTermA.GetComponent<InputField>().placeholder.GetComponent<Text>().text = "Bitte gültige Zahl eingeben.";
+            inputFieldTermA.text = "";  
+        }
 
+        try
+        {
+        termB = int.Parse(inputFieldTermB.text);
+        }
+        catch (System.Exception)
+        {
+            inputFieldTermB.GetComponent<InputField>().image.color = Color.red;
+            inputFieldTermB.GetComponent<InputField>().placeholder.GetComponent<Text>().text = "Bitte gültige Zahl eingeben.";
+            inputFieldTermB.text = "";
+        }
+        termA = int.Parse(inputFieldTermA.text);
+        termB = int.Parse(inputFieldTermB.text);
+
+        txtResult.text = CheckAddition(termA, termB).ToString();
 
         
-        Debug.Log("Methode GetValues wird ausgeführt:" + CheckAddition(int.Parse(termA), int.Parse(termB)));
+        Debug.Log("Methode GetValues wird ausgeführt:" + CheckAddition(termA, termB));
     }
     
     public void ResetBtn()
     {
 
-        inputFieldTermA.text = String.Empty;
-        inputFieldTermB.text = String.Empty;
+        inputFieldTermA.text = "";
+        inputFieldTermB.text = "";
         txtResult.text = "result";
             termA = 0;
             termB = 0;
-
+        inputFieldTermA.GetComponent<InputField>().image.color = Color.white;
+        inputFieldTermB.GetComponent<InputField>().image.color = Color.white;
+        inputFieldTermA.GetComponent<InputField>().placeholder.GetComponent<Text>().text = "Ganze Zahl eingeben...";
+        inputFieldTermB.GetComponent<InputField>().placeholder.GetComponent<Text>().text = "Ganze Zahl eingeben...";
     }
-    void Update()
-    {
-        
-        
-    }
-
+    
+    //man kann auch mit RegEX (Regular Expression) oder mit Parse Input arbeiten
     
 
 }
