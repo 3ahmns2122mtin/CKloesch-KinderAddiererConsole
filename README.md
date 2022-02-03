@@ -13,6 +13,7 @@ WebGL Referenzauflösung (960x600)
 ![Script_Auschnitt](https://user-images.githubusercontent.com/90834327/152237327-660f39a7-6e6d-4e30-9b7f-8dadaef86da1.PNG)
 ![Unity_Ausschnitt](https://user-images.githubusercontent.com/90834327/152237341-17e51243-09fe-44f4-a7d3-7a629fc967ac.PNG)
 
+https://3ahmns2122mtin.github.io/CKloesch-KinderAddiererConsole/
 
 ### Notwendiges für die Ausführung: 
 Unity 2020.1.18f1
@@ -33,13 +34,15 @@ violet_wallpaper
 ### Lessons Learned:
 - [x] wie addiere ich im script
 - [x] Verwendung von Buttons
+- [x] Verwendung von Inputfields
 - [x] Reset mit Button press
 - [x] Abfrage ob Input richtig ist
-- [x] InputFields aus script ändern
+- [x] InputFields aus Script ändern
 - [x] Zugriff auf Kind Objekte
 - [x] Interaktivität En/Disable
 - [x] Versionskontrolle
 - [x] push/pull mit Git
+- [x] Build WebGL
 
 
 Copyright by CKloesch
